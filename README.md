@@ -10,7 +10,7 @@ Unity 3d Asset - texture to mesh to playable pixels :)
  - Larger images do process, but may take more time depending on hardware
  
  ![anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_editor_1.png?raw=true)<br>
- [anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_gif5.gif?raw=true)<br>
+ ![anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_gif5.gif?raw=true)<br>
  
 
 
