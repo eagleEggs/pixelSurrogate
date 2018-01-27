@@ -1,7 +1,6 @@
 # pixelSurrogate
 Unity 3d Asset - texture to mesh to playable pixels :)
-
-Example:
+<br><br>
 
 ![anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_gif2.gif?raw=true)<br>
 
