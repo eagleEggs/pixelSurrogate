@@ -3,7 +3,7 @@ Unity 3d Asset - texture to mesh to playable pixels :)
 
 Example:
 
-![anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_gif1.gif?raw=true)<br>
+![anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_gif2.gif?raw=true)<br>
 
 
 <br><br>
