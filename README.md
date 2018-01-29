@@ -10,5 +10,5 @@ Unity 3d Asset - texture to mesh to playable pixels :)
  ![anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_quads.png?raw=true)<br>
  ![anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_demo9.gif?raw=true)<br>
  ![anim1](https://github.com/eagleEggs/pixelSurrogate/blob/master/screenShots/pixelSurrogate_editor_1.png?raw=true)
-- A part of [materialGate](https://www.github.com/eagleEggs/materialGate)<br>
-The updated code goes into both repositories. Use this one alone if you do not need materialGate :)
+
+- Update: No longer being pushed to [materialGate](https://www.github.com/eagleEggs/materialGate), this is now standalone.
