@@ -10,14 +10,13 @@ public class pixelSurrogateController : MonoBehaviour
 
     [ExecuteInEditMode]
 
-    [SerializeField]
-    private Texture2D sourceTex;
-    public Texture2D destTex2;
-    private Color[] destPix;
-    public Rect sourceRect;
-    private float csColorTotal;
-    [SerializeField] private int setWidth;
-    [SerializeField] private float setHeight;
+    [SerializeField] private Texture2D sourceTex; // source texture to copy
+    [SerializeField] private Rect sourceRect; // rect reference that sets dimensions to read source
+    [SerializeField] private int setWidth; // width of texture
+    [SerializeField] private int setHeight; // height of teture
+    private Texture2D destTex2; // destination texture to write
+    private Color[] destPix; // destination texture pixel array
+
 
 
     void Start()
@@ -31,49 +30,38 @@ public class pixelSurrogateController : MonoBehaviour
     {
 
 
-        List<Color> colrs = new List<Color>();
-        List<Color> colorArray = new List<Color>();
-        List<float> colorSort = new List<float>();
-        Dictionary<float, Color> myColors = new Dictionary<float, Color>();
-        Dictionary<float, Color> myColors2 = new Dictionary<float, Color>();
-        List<Color> colorsFinal = new List<Color>();
+        List<Color> colorsFinal = new List<Color>(); // color list
 
+        // all x and y of the texture to iterate
         int x = Mathf.FloorToInt(sourceRect.x);
         int y = Mathf.FloorToInt(sourceRect.y);
         int width = Mathf.FloorToInt(sourceRect.width);
         int height = Mathf.FloorToInt(sourceRect.height);
 
-        Color[] pix = sourceTex.GetPixels(x, y, width, height);
+        Color[] pix = sourceTex.GetPixels(x, y, width, height); // get the source texture pixels into the array
 
-        destTex2 = new Texture2D(width, height);
+        destTex2 = new Texture2D(width, height); // set the dimensions of teh output texture, must be equal to source
 
-        int n = 0;
-        int nn = 0;
+        int n = 0; // x iteration
+        int nn = 0; // y iteration
 
-        string cnum = n.ToString();
-        foreach (Color cs in pix)
+        foreach (Color cs in pix) // for each color in the color array from source texture
         {
 
-            if (nn <= setHeight)
+            if (nn <= setHeight) // if y isn't above the height of the texture
             {
-                if (n == setWidth) { n = 0; nn++; }
+                if (n == setWidth) { n = 0; nn++; } // if x = total width, set it to 0, increase y
 
-                float csr = cs.r;
-                float csg = cs.g;
-                float csb = cs.b;
-                float csa = cs.a;
-                csColorTotal = csr + csg + csb + csa / 4f;
+                colorsFinal.Add(cs); // add the color from the source to to list
 
-                colorsFinal.Add(cs);
-                var go = GameObject.CreatePrimitive(PrimitiveType.Quad);
-                Color mesh = go.GetComponent<Renderer>().material.color = cs;
-                go.AddComponent<pixelSurrogate_hatch>();
-                go.transform.position = new Vector3(n, nn, 0);
-                destTex2.SetPixel(n, nn, cs);
+                // create quads:
+                var go = GameObject.CreatePrimitive(PrimitiveType.Quad); // create
+                Color mesh = go.GetComponent<Renderer>().material.color = cs; // set it's color
+                go.AddComponent<pixelSurrogate_hatch>(); // add script to each mesh for AI behaviour
+                go.transform.position = new Vector3(n, nn, 0); // put the quad in the same x/y as the texture
+                destTex2.SetPixel(n, nn, cs); // set the textures pixel to mirror the texture
 
-                Debug.Log("adding");
-                Debug.Log(n);
-                n++;
+                n++; // iterate x
 
 
             }
@@ -81,7 +69,7 @@ public class pixelSurrogateController : MonoBehaviour
         }
 
 
-        destTex2.Apply();
+        destTex2.Apply(); // apply the changes to the texture
 
 
 
