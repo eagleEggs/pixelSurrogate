@@ -4,13 +4,15 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class pixelSurrogateController : MonoBehaviour
 {
 
     [ExecuteInEditMode]
 
-    [SerializeField] private Texture2D sourceTex; // source texture to copy
+    [SerializeField]
+    private Texture2D sourceTex; // source texture to copy
     [SerializeField] private Rect sourceRect; // rect reference that sets dimensions to read source
     [SerializeField] private int setWidth; // width of texture
     [SerializeField] private int setHeight; // height of teture
@@ -18,12 +20,13 @@ public class pixelSurrogateController : MonoBehaviour
     private Color[] destPix; // destination texture pixel array
 
 
-
     void Start()
     {
 
 
+
     }
+
 
 
     public void hatchemall()
@@ -58,8 +61,9 @@ public class pixelSurrogateController : MonoBehaviour
                 var go = GameObject.CreatePrimitive(PrimitiveType.Quad); // create
                 Color mesh = go.GetComponent<Renderer>().material.color = cs; // set it's color
                 go.AddComponent<pixelSurrogate_hatch>(); // add script to each mesh for AI behaviour
-                go.transform.position = new Vector3(n, nn, 0); // put the quad in the same x/y as the texture
+                go.transform.position = new Vector3(n, nn, transform.position.z); // put the quad in the same x/y as the texture
                 destTex2.SetPixel(n, nn, cs); // set the textures pixel to mirror the texture
+                Destroy(go.GetComponent<Collider>());
 
                 n++; // iterate x
 
@@ -76,13 +80,9 @@ public class pixelSurrogateController : MonoBehaviour
     }
 
 
-    void Update()
-    {
-
-
-
-    }
-
-
 
 }
+
+
+
+
