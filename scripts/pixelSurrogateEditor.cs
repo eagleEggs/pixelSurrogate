@@ -21,7 +21,7 @@ public class pixelSurrogateEditor : Editor
         EditorGUILayout.LabelField("General Controls", EditorStyles.boldLabel);
         GUILayout.Label("Texture to Pixels Settings");
         EditorGUILayout.BeginVertical("Box");
-        GUILayout.Label("Select your Source Texture, Click Update, then Hatchemall. This will store the Width and Height of the texture for you. WARNING: Using anything other than Quads or a texture over 128x128 may freeze. This will generate a lot of objects in the scene!", miniLabelStyle);
+        GUILayout.Label("Select your Source Texture, Click Update, then Hatchemall. This will store the Width and Height of the texture for you. WARNING: Using anything other than Quads or a texture over 64x64 may freeze. This will generate a lot of objects in the scene!", miniLabelStyle);
         EditorGUILayout.EndVertical();
         EditorGUILayout.BeginVertical("Box");
         if (GUILayout.Button("Update"))

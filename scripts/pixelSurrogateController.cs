@@ -12,9 +12,9 @@ public class pixelSurrogateController : MonoBehaviour
     [Header("Texture Settings:")]
     [SerializeField]
     private Texture2D sourceTexture; // source texture to copy
-    [SerializeField] private Rect sourceRect; // rect reference that sets dimensions to read source
-    [SerializeField] private float setWidth; // width of texture
-    [SerializeField] private float setHeight; // height of teture
+    [HideInInspector] private Rect sourceRect; // rect refernce that sets dimensions to read source
+    [HideInInspector] private float setWidth; // width of texture
+    [HideInInspector] private float setHeight; // height of teture
     private Texture2D destinationTexture; // destination texture to write
     private Color[] destPix; // destination texture pixel array
     [Header("Mesh Options: Fastest is Quad")]
