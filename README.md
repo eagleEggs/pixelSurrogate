@@ -1,4 +1,4 @@
-# pixelSurrogate
+# pixelSurrogate ![Packagist](https://img.shields.io/badge/Status-Stable-green.svg?style=plastic) ![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg?style=plastic) ![Packagist](https://img.shields.io/badge/Platform-Unity3d-black.svg?style=plastic) ![Packagist](https://img.shields.io/badge/Languages-C%23-orange.svg?style=plastic)
 Unity 3d Asset - Texture to Mesh to Playable Pixels :)
 <br><br>
 
